@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-lg-7 col-md-10">
         <h1 class="display-2 text-white">Hello {{user?.lastName}}</h1>
-        <a href="#!" class="btn btn-info">Edit profile</a>
+        <a routerLink="user-update" class="btn btn-info">Edit profile</a>
       </div>
     </div>
   </div>
@@ -67,6 +67,17 @@
                   <div class="form-group">
                     <label class="form-control-label" for="input-address">Address</label>
                     <input id="input-address" class="form-control form-control-alternative" placeholder="{{user.address}}"  type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-address">role</label>
+
+                    <input id="input-role" class="form-control form-control-alternative" placeholder="{{user.role}}"  type="text">
                   </div>
                 </div>
               </div>
