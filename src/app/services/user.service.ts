@@ -42,4 +42,8 @@ export class UserService {
   getUsersByGroup(idUser: number): Observable<any[]> {
     return this.http.get<any[]>(this.getUserByGroupURL + idUser);
   }
+
+  findUsersOfSameGroupByUserId(userId: number) {
+    return this.http.get(this.url + '/findUsersOfSameGroupByUserId/' + userId);
+  }
 }

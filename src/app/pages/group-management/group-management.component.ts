@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {User} from '../../models/user';
+import {GroupServiceService} from "../../services/group-service.service";
 
 @Component({
   selector: 'app-group-management',
@@ -9,15 +10,15 @@ import {User} from '../../models/user';
 })
 export class GroupManagementComponent implements OnInit {
   userList: User[] = [];
-  allUsers: User[] = [];
-  constructor( private userService: UserService) { }
+  constructor( private userService: UserService, private groupService: GroupServiceService) { }
 
   ngOnInit(): void {
 
   }
-  getUserByGroup(idGroup: number) {
-    this.userService.getUsersByGroup(idGroup).subscribe({
-      next: value => this.userList = value, error: err => console.log(err)
+
+  findUsersOfSameGroupByUserId(idGroup: number) {
+    this.userService.findUsersOfSameGroupByUserId(idGroup).subscribe({
+      next: (value: User[]) => this.userList = value, error: err => console.log(err)
     });
   }
 
