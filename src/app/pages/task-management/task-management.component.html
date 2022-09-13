@@ -1,0 +1,67 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <h3 class="mb-0">Task tables</h3>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+            <tr>
+              <th scope="col">description</th>
+              <th scope="col">statustype</th>
+              <th scope="col">storypoint</th>
+              <th scope="col">startDate</th>
+              <th scope="col">endDate</th>
+              <th scope="col">time spante</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let task of taskList">
+              <td>
+                {{task.description}}
+              </td>
+
+              <td>
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="btn btn-outline-primary" id="dropdownBasic1"
+                          ngbDropdownToggle>{{task.statustype}}</button>
+                  <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                    <button class="dropdown-item" (click)="changeStatus('DOING',task)" ngbDropdownItem>
+                      DOING
+                    </button>
+                    <button class="dropdown-item" (click)="changeStatus('DONE', task)" ngbDropdownItem>
+                      DONE
+                    </button>
+                  </div>
+                </div>
+              </td>
+              <td>
+                {{task.storypoint}}
+              </td>
+              <td>
+                {{task.startDate}}
+              </td>
+              <td>
+                {{task.endDate}}
+              </td>
+              <td>
+                {{task.timeSpent}}
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

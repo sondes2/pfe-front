@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
 import {AuthInterceptor} from './auth/auth.interceptor';
 import { GroupManagementComponent } from './pages/group-management/group-management.component';
+import { TaskManagementComponent } from './pages/task-management/task-management.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { GroupManagementComponent } from './pages/group-management/group-managem
     AppComponent,
     AdminLayoutComponent,
     AuthLayoutComponent,
-    GroupManagementComponent
+    GroupManagementComponent,
+    TaskManagementComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
